@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+
+import argparse
+from rsasim import generate_large_prime
+
+
+parser = argparse.ArgumentParser(
+    description='Generate a random prime number. It generates a 100 bit prime \
+                 by default.')
+parser.add_argument("--bits", nargs='?', default=100,
+                    help="""number of bits in generated prime""",
+                    type=int)
+args = parser.parse_args()
+print(generate_large_prime(args.bits))

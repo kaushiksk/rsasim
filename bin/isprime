@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+import argparse
+from rsasim import miller_rabin
+
+
+parser = argparse.ArgumentParser(
+    description='Check whether an integer is prime')
+parser.add_argument("number", help="""integer to test for primality using
+                                    miller-rabin primality test""",
+                    type=int)
+args = parser.parse_args()
+print(miller_rabin(args.number))
